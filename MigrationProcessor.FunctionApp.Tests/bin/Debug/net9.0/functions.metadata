@@ -1,0 +1,23 @@
+[
+  {
+    "name": "MigrationZipFound",
+    "scriptFile": "MigrationProcessor.FunctionApp.dll",
+    "entryPoint": "MigrationProcessor.FunctionApp.MigrationZipFound.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "blob",
+        "direction": "In",
+        "type": "blobTrigger",
+        "path": "Migration/{name}",
+        "connection": "MigrationConnection",
+        "properties": {
+          "supportsDeferredBinding": "True"
+        }
+      }
+    ]
+  }
+]
